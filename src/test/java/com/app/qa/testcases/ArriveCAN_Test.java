@@ -4,26 +4,18 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.app.qa.base.Common;
 import com.app.qa.base.TestBase;
-import com.app.qa.pages.ContactsPage;
-import com.app.qa.pages.LoginPage;
 import com.app.qa.pages.MainPage;
 import com.app.qa.pages.PrivacyPage;
 import com.app.qa.pages.SignInPage;
 import com.app.qa.pages.TravelPurposePage;
 import com.app.qa.pages.WelcomePage;
-import com.app.qa.util.TestUtil;
 
 public class ArriveCAN_Test extends TestBase {
 
