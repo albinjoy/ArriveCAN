@@ -1,4 +1,4 @@
-package com.crm.qa.testcases;
+package com.app.qa.testcases;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,16 +14,16 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.crm.qa.base.Common;
-import com.crm.qa.base.TestBase;
-import com.crm.qa.pages.ContactsPage;
-import com.crm.qa.pages.LoginPage;
-import com.crm.qa.pages.MainPage;
-import com.crm.qa.pages.PrivacyPage;
-import com.crm.qa.pages.SignInPage;
-import com.crm.qa.pages.TravelPurposePage;
-import com.crm.qa.pages.WelcomePage;
-import com.crm.qa.util.TestUtil;
+import com.app.qa.base.Common;
+import com.app.qa.base.TestBase;
+import com.app.qa.pages.ContactsPage;
+import com.app.qa.pages.LoginPage;
+import com.app.qa.pages.MainPage;
+import com.app.qa.pages.PrivacyPage;
+import com.app.qa.pages.SignInPage;
+import com.app.qa.pages.TravelPurposePage;
+import com.app.qa.pages.WelcomePage;
+import com.app.qa.util.TestUtil;
 
 public class ArriveCAN_Test extends TestBase {
 

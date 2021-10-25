@@ -1,4 +1,4 @@
-package com.crm.qa.base;
+package com.app.qa.base;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,8 +21,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.crm.qa.util.TestUtil;
-import com.crm.qa.util.WebEventListener;
+import com.app.qa.util.TestUtil;
+import com.app.qa.util.WebEventListener;
 
 public class TestBase {
 
@@ -36,7 +36,7 @@ public class TestBase {
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(
-					System.getProperty("user.dir") + "/src/main/java/com/crm" + "/qa/config/config.properties");
+					System.getProperty("user.dir") + "/src/main/java/com/app" + "/qa/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -73,7 +73,7 @@ public class TestBase {
 	}
 
 	public void click(WebElement ele) throws InterruptedException {
-		wait.until(ExpectedConditions.elementToBeClickable(ele));
+		/* wait.until(ExpectedConditions.elementToBeClickable(ele)); */
 		ele.click();
 		Thread.sleep(2000);
 	}

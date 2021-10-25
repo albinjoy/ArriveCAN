@@ -3,7 +3,7 @@
  * 
  */
 
-package com.crm.qa.testcases;
+package com.app.qa.testcases;
 
 import java.io.IOException;
 
@@ -19,11 +19,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 
-import com.crm.qa.base.TestBase;
-import com.crm.qa.pages.ContactsPage;
-import com.crm.qa.pages.HomePage;
-import com.crm.qa.pages.LoginPage;
-import com.crm.qa.util.TestUtil;
+import com.app.qa.base.TestBase;
+import com.app.qa.pages.ContactsPage;
+import com.app.qa.pages.HomePage;
+import com.app.qa.pages.LoginPage;
+import com.app.qa.util.TestUtil;
 
 public class ContactsPageTest extends TestBase{
 

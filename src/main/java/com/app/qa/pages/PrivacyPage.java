@@ -1,11 +1,11 @@
-package com.crm.qa.pages;
+package com.app.qa.pages;
 
 import java.sql.Driver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.crm.qa.base.TestBase;
+import com.app.qa.base.TestBase;
 
 public class PrivacyPage extends TestBase {
 	

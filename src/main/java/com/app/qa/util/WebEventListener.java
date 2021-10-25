@@ -1,4 +1,4 @@
-package com.crm.qa.util;
+package com.app.qa.util;
 /*************************************** PURPOSE **********************************
 
  - This class implements the WebDriverEventListener, which is included under events.
@@ -18,7 +18,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-import com.crm.qa.base.TestBase;
+import com.app.qa.base.TestBase;
 
 public class WebEventListener extends TestBase implements WebDriverEventListener {
 

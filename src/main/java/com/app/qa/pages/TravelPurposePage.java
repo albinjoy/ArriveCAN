@@ -1,9 +1,9 @@
-package com.crm.qa.pages;
+package com.app.qa.pages;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import com.crm.qa.base.TestBase;
+import com.app.qa.base.TestBase;
 
 public class TravelPurposePage extends TestBase {
 	

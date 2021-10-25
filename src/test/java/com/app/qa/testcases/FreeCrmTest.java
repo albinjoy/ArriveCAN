@@ -1,4 +1,4 @@
-package com.crm.qa.testcases;
+package com.app.qa.testcases;
 
 import java.io.File;
 import java.io.IOException;

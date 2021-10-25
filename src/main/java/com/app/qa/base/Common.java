@@ -1,4 +1,4 @@
-package com.crm.qa.base;
+package com.app.qa.base;
 
 import java.io.File;
 import java.io.IOException;
