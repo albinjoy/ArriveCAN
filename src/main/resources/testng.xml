@@ -9,9 +9,10 @@
 
 	<test name="ArriveCAN App Test Cases">
 		<classes>
-			<class name="com.crm.qa.testcases.LoginPageTest"></class>
-			<class name="com.crm.qa.testcases.HomePageTest"></class>
-			<class name="com.crm.qa.testcases.ContactsPageTest"></class>
+			<class name="com.app.qa.testcases.ArriveCAN_Test"></class>
+			<class name="com.app.qa.testcases.LoginPageTest"></class>
+			<class name="com.app.qa.testcases.HomePageTest"></class>
+			<class name="com.app.qa.testcases.ContactsPageTest"></class>
 
 		</classes>
 	</test>

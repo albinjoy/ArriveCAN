@@ -6,4 +6,4 @@
 # git clone https://github.com/albinjoy/ArriveCAN.git
 # cd ArriveCAN
 # mvn clean compile
-# mvn install
+# mvn test
