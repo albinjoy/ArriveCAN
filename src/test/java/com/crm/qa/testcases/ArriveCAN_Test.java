@@ -39,27 +39,23 @@ public class ArriveCAN_Test extends TestBase {
 		wPage = new WelcomePage();
 		pPage = new PrivacyPage();
 		sPage = new SignInPage();
+		mPage = new MainPage();
+		tPage = new TravelPurposePage();
 	}
 
+
 	@Test
-	public void verifywelcomePage() throws IOException {
-		String welcomeTitle = driver.findElement(By.xpath(prop.getProperty("WelcomePage.welcomeTitle.xpath")))
-				.getText();
-		String expectedTitle = "Welcome to ArriveCAN";
-		Assert.assertEquals(expectedTitle, welcomeTitle);
+	public void verifySignInPage() throws IOException, InterruptedException {
+		wPage.verifyWelcomePage();
 		wPage.clickGetStarted();
-		takeScreenshot("verifywelcomePage");
+		pPage.clickNext();
+		sPage.performSignIn(prop.getProperty("username"), prop.getProperty("password"));
+		mPage.verifyMainPage();
+		mPage.clickStart();
+		tPage.verifyTravelPurposepage();
+		takeScreenshot("verifySignInPage"); 
 	}
 
-	@Test
-	public void verifySignInPage() {
-
-	}
-
-	@Test
-	public void verifyTravelPurposePage() {
-
-	}
 
 	@AfterMethod
 	public void tearDown() {
@@ -70,7 +66,7 @@ public class ArriveCAN_Test extends TestBase {
 		// Take screenshot and store as a file format
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		// now copy the screenshot to desired location using copyFile //method
-		FileUtils.copyFile(src, new File("/Users/albinjoy/Documents/development/ArriveCAN-app/screenshots/" + fileName + ".jpeg"),true);
+		FileUtils.copyFile(src, new File("/Users/albinjoy/Documents/development/ArriveCAN/screenshots/" + fileName + ".jpeg"),true);
 
 	}
 

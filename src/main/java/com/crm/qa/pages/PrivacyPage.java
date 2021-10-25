@@ -9,7 +9,7 @@ import com.crm.qa.base.TestBase;
 
 public class PrivacyPage extends TestBase {
 	
-	public void clickNext(String username, String password) {
+	public void clickNext() {
 		WebElement clickNext = driver.findElement(By.xpath(prop.getProperty("PrivacyPage.clickNext.xpath")));
 		clickNext.click();
 	}
