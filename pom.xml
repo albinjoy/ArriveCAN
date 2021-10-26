@@ -24,11 +24,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
-					<!-- <includes>
-						<include>ArriveCAN_Test.java</include>
-					</includes> -->
+					<!-- <includes> <include>**/*ArriveCAN_Test.java</include> </includes> -->
 					<suiteXmlFiles>
-					<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>testng_ArriveCAN.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
@@ -101,10 +99,13 @@
 
 
 		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<!-- <dependency> <groupId>com.relevantcodes</groupId> <artifactId>extentreports</artifactId> 
+			<version>2.41.2</version> </dependency> -->
+
 		<dependency>
-			<groupId>com.relevantcodes</groupId>
+			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>2.41.2</version>
+			<version>3.1.5</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
