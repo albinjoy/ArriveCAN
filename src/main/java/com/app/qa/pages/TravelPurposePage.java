@@ -12,4 +12,13 @@ public class TravelPurposePage extends TestBase {
 		String actuallabel = "Travel purpose";
 		Assert.assertEquals(travelpurposelabel, actuallabel);
 	}
+	
+	public void travelPurpose_btn(String TravelPurp_btn) {
+		driver.findElement(By.xpath("//button[text()=' "+TravelPurp_btn+" ']")).click();
+	}
+	
+	public void travelPurpose_lbl(String TravelPurp_lbl) {
+		driver.findElement(By.xpath("//label[text()=' "+TravelPurp_lbl+" ']")).click();
+		clickNext();
+	}
 }

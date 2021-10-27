@@ -21,7 +21,7 @@ public class TestUtil extends TestBase {
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
 
-	public static String TESTDATA_SHEET_PATH = "/Users/albinjoy/Documents/development/PageObjectModel-1/src/main/java/com/app/qa/testdata/FreeCrmTestData.xlsx";
+	public static String TESTDATA_SHEET_PATH = "/Users/albinjoy/Documents/development/ArriveCAN/src/main/java/com/app/qa/testdata/ArriveCANData.xlsx";
 
 	static Workbook book;
 	static Sheet sheet;
@@ -71,7 +71,7 @@ public class TestUtil extends TestBase {
 				+ "var jquery = document.createElement('script'); jquery.type = 'text/javascript';"
 				+ "jquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js';"
 				+ "document.getElementsByTagName('head')[0].appendChild(jquery);" + "}");
-		Thread.sleep(5000);
+		Thread.sleep(500);
 
 		// Use jQuery to add jquery-growl to the page
 		js.executeScript("$.getScript('https://the-internet.herokuapp.com/js/vendor/jquery.growl.js')");

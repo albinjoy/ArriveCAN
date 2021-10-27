@@ -29,19 +29,19 @@ public class ExtentReportsNG {
 		
 	}
 	
-	@Test
-	public void sampleTest() throws IOException {
-        ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
-
-        test.log(Status.INFO, "This step shows usage of log(status, details)");
-
-        test.info("This step shows usage of info(details)");
-        
-        test.fail("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
-        
-        test.addScreenCaptureFromPath("screenshot.png");
-
-	}
+//	@Test
+//	public void sampleTest() throws IOException {
+//        ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
+//
+//        test.log(Status.INFO, "This step shows usage of log(status, details)");
+//
+//        test.info("This step shows usage of info(details)");
+//        
+//        test.fail("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
+//        
+//        test.addScreenCaptureFromPath("screenshot.png");
+//
+//	}
 	
 	@AfterSuite
 	public void tearDown() {

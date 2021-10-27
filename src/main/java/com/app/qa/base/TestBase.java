@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -86,6 +87,15 @@ public class TestBase {
 
 	public String getTitle() {
 		return driver.getTitle();
+	}
+	
+	public void clickNext() {
+		driver.findElement(By.id("next")).click();
+	}
+	
+	public void clickSubmit() {
+		driver.findElement(By.id("submit")).click();
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 	}
 
 }
