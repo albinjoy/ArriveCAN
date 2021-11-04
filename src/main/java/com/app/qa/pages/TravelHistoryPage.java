@@ -6,10 +6,17 @@ import org.openqa.selenium.Keys;
 import com.app.qa.base.TestBase;
 
 public class TravelHistoryPage extends TestBase {
-	
+
 	public void addTravelHistory(String Traveller_visited) {
-		driver.findElement(By.id(prop.getProperty("TravelHistoryPage.visitedCountry.id"))).sendKeys(Traveller_visited);
-		driver.findElement(By.id(prop.getProperty("TravelHistoryPage.visitedCountry.id"))).sendKeys(Keys.ENTER);
-		clickNext();
+
+		if (!Traveller_visited.equalsIgnoreCase("IGNORE")) {
+			driver.findElement(By.id(prop.getProperty("TravelHistoryPage.visitedCountry.id")))
+					.sendKeys(Traveller_visited);
+			driver.findElement(By.id(prop.getProperty("TravelHistoryPage.visitedCountry.id"))).sendKeys(Keys.ENTER);
+			clickNext();
+		} else {
+			System.out.println("Traveller Visited page is not applicable");
+		}
+
 	}
 }

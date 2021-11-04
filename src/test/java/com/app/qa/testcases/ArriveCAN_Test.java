@@ -65,8 +65,9 @@ public class ArriveCAN_Test extends TestBase {
 	}
 
 	@BeforeClass
-	public void setUp() {
+	public void setUp() throws InterruptedException {
 		initialization();
+		logintoAPP(prop.getProperty("username"), prop.getProperty("password"));
 //		extentReports = new ExtentReporterNG();
 		wPage = new WelcomePage();
 		pPage = new PrivacyPage();
@@ -83,19 +84,15 @@ public class ArriveCAN_Test extends TestBase {
 	@Test(enabled = true, testName = "verifySignInPage", dataProvider = "arrivecandata")
 	public void createSubmission(String testName, String travel_btn, String travel_lbl, String entry_type,
 			String Traveller_doctype, String Traveller_docnum, String Traveller_surname, String Traveller_givename,
-			String Traveller_dob, String Traveller_mobile, String Traveller_visited)
+			String Traveller_dob, String Traveller_mobile, String Traveller_visited, String Content)
 			throws IOException, InterruptedException {
 //		test = extent.createTest(testName).pass("Test Execution Started");
 		test = extent.createTest(testName).log(Status.PASS, "Test Execution Started");
 
 		test.pass("Page loaded successfully");
-		wPage.verifyWelcomePage();
 		test.pass("Navigated successfully from Welcome Page");
-		wPage.clickGetStarted();
-		pPage.clickNext();
-		sPage.performSignIn(prop.getProperty("username"), prop.getProperty("password"));
 //		TestUtil.runTimeInfo("info", "login successful");
-		mPage.verifyMainPage();
+//		mPage.verifyMainPage();
 		mPage.clickStart();
 		tPage.verifyTravelPurposepage();
 		tPage.travelPurpose_btn(travel_btn);
@@ -105,21 +102,22 @@ public class ArriveCAN_Test extends TestBase {
 		conPage.addContact(Traveller_mobile);
 		visitedPage.addTravelHistory(Traveller_visited);
 		clickSubmit();
-		receiptPage.exemptReceiptHead();
+		receiptPage.exemptReceiptHead(Content);
+		test.pass("Created Submission for Exempt Traveller successfully with the mode of entry as "+entry_type);
 		takeScreenshot(testName);
-//		receiptPage.clickStartOver();
-//		wPage.verifyWelcomePage();
+		receiptPage.clickStartOver();
+		wPage.verifyWelcomePage();
 		
 //		extentReports.generateReport("testng_ArriveCAN", "testng_ArriveCAN", "/Users/albinjoy/Documents/development/ArriveCAN/test-output");
 	}
 
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
+	/*
+	 * @AfterMethod public void tearDown() { driver.quit(); }
+	 */
 
 	@AfterSuite
 	public void reportsTearDown() {
+		driver.quit();
 		extent.flush();
 
 	}
@@ -129,7 +127,7 @@ public class ArriveCAN_Test extends TestBase {
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		// now copy the screenshot to desired location using copyFile //method
 		FileUtils.copyFile(src,
-				new File("/Users/albinjoy/Documents/development/ArriveCAN/screenshots/" + fileName + ".jpeg"), true);
+				new File("/Users/albinjoy/Documents/development/ArriveCAN/screenshots/" + fileName + "_" + timestamp() + ".jpeg"), true);
 
 	}
 
