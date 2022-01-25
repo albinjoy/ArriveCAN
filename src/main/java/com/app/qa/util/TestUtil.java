@@ -21,7 +21,7 @@ public class TestUtil extends TestBase {
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
 
-	public static String TESTDATA_SHEET_PATH = "/Users/albinjoy/Documents/development/ArriveCAN/src/main/java/com/app/qa/testdata/ArriveCANData.xlsx";
+	public static String TESTDATA_SHEET_PATH = "C:/development/ArriveCAN/src/main/java/com/app/qa/testdata/ArriveCANData.xlsx";
 
 	static Workbook book;
 	static Sheet sheet;

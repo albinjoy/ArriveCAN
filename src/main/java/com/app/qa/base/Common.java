@@ -19,7 +19,7 @@ public class Common extends TestBase {
 
 	@BeforeTest
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "/Users/albinjoy/Documents/development/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:/development/drivers/chromedriver");
 		driver = new ChromeDriver();
 		js = (JavascriptExecutor) driver;
 		String url = prop.getProperty("url");
@@ -32,7 +32,7 @@ public class Common extends TestBase {
 		// Take screenshot and store as a file format
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		// now copy the screenshot to desired location using copyFile //method
-		FileUtils.copyFile(src, new File("/Users/albinjoy/Documents/development/ArriveCAN/screenshots/" + fileName + ".jpeg"),true);
+		FileUtils.copyFile(src, new File("C:/development/ArriveCAN/screenshots/" + fileName + ".jpeg"),true);
 
 		driver.quit();
 	}

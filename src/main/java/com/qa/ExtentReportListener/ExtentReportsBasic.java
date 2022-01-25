@@ -29,7 +29,7 @@ public class ExtentReportsBasic extends TestBase {
 		ExtentTest test = extent.createTest("Sample Extent Report").pass("Test Passed");
 		
 //		String projectPath = System.getProperty("user.dir");
-		System.setProperty("webdriver.chrome.driver", "/Users/albinjoy/Documents/development/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:/development/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		
 		test.log(Status.INFO, "Starting Test Case");
