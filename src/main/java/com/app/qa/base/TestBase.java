@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -93,7 +94,6 @@ public class TestBase {
 	public static void click(WebElement ele) throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 		ele.click();
-		Thread.sleep(2000);
 	}
 
 	public static void type(WebElement ele, String data) throws InterruptedException {
@@ -108,6 +108,11 @@ public class TestBase {
 
 	public void clickNext() {
 		driver.findElement(By.id("next")).click();
+	}
+	
+	public void highLighterMethod(WebDriver driver, WebElement element){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
 	}
 
 	public void clickSubmit() {

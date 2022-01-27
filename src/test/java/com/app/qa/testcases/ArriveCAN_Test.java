@@ -86,7 +86,8 @@ public class ArriveCAN_Test extends TestBase {
 
 	@Test(enabled = true, testName = "createExemptTrip", dataProvider = "arrivecandata")
 	public void createSubmission(String testName, String travel_lbl, String entry_type, String selectTraveller,
-			String Traveller_mobile, String Traveller_visited, String Content)
+			String Traveller_mobile, String Traveller_visited, String Content, String Traveller_doctype,
+			String Traveller_docnum, String Traveller_surname, String Traveller_givename, String Traveller_dob)
 			throws IOException, InterruptedException {
 //		test = extent.createTest(testName).pass("Test Execution Started");
 		test = extent.createTest(testName).log(Status.PASS, "Test Execution Started");
@@ -100,11 +101,12 @@ public class ArriveCAN_Test extends TestBase {
 		tPage.travelPurpose_lbl(travel_lbl);
 		ePage.selectEntryType(entry_type);
 		conPage.addContact(Traveller_mobile);
-		tripPage.selectTraveller(selectTraveller);
+		tripPage.selectTraveller(selectTraveller, Traveller_doctype, Traveller_docnum, Traveller_surname,
+				Traveller_givename, Traveller_dob);
 		visitedPage.addTravelHistory(Traveller_visited);
 		clickSubmit();
-		receiptPage.exemptReceiptHead(Content);
-		test.pass("Created Submission for Exempt Traveller successfully with the mode of entry as " + entry_type);
+		receiptPage.exemptReceiptHead(Content, tPage.getPOTname());
+		test.pass("Created Submission for Exempt Traveller successfully with the mode of entry as " + entry_type + "and eReceipt : " + receiptPage.getReceipt() + " and purpose of Travel is " + tPage.getPOTname());
 		takeScreenshot(testName);
 		receiptPage.clickStartOver();
 		wPage.verifyWelcomePage();
