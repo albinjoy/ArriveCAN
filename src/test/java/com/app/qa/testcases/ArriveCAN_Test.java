@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 import com.app.qa.base.TestBase;
 import com.app.qa.pages.AddContactInfoPage;
 import com.app.qa.pages.AddTravellerPage;
+import com.app.qa.pages.ExemptProfilePage;
 import com.app.qa.pages.MainPage;
 import com.app.qa.pages.PrivacyPage;
 import com.app.qa.pages.ReceiptPage;
@@ -47,6 +48,7 @@ public class ArriveCAN_Test extends TestBase {
 	MainPage mPage;
 	TravelPurposePage tPage;
 	TravelEntryPage ePage;
+	ExemptProfilePage exemptPage;
 	AddTravellerPage addPage;
 	AddContactInfoPage conPage;
 	TripTravellerPage tripPage;
@@ -77,6 +79,7 @@ public class ArriveCAN_Test extends TestBase {
 		mPage = new MainPage();
 		tPage = new TravelPurposePage();
 		ePage = new TravelEntryPage();
+		exemptPage = new ExemptProfilePage();
 		addPage = new AddTravellerPage();
 		conPage = new AddContactInfoPage();
 		tripPage = new TripTravellerPage();
@@ -99,6 +102,7 @@ public class ArriveCAN_Test extends TestBase {
 		mPage.clickStart();
 		tPage.verifyTravelPurposepage();
 		tPage.travelPurpose_lbl(travel_lbl);
+		exemptPage.verifyExemptProfilepage();
 		ePage.selectEntryType(entry_type);
 		conPage.addContact(Traveller_mobile);
 		tripPage.selectTraveller(selectTraveller, Traveller_doctype, Traveller_docnum, Traveller_surname,
@@ -106,7 +110,7 @@ public class ArriveCAN_Test extends TestBase {
 		visitedPage.addTravelHistory(Traveller_visited);
 		clickSubmit();
 		receiptPage.exemptReceiptHead(Content, tPage.getPOTname());
-		test.pass("Created Submission for Exempt Traveller successfully with the mode of entry as " + entry_type + "and eReceipt : " + receiptPage.getReceipt() + " and purpose of Travel is " + tPage.getPOTname());
+		test.pass("Created Submission for Exempt Traveller successfully with the mode of entry as " + entry_type + " and eReceipt : " + receiptPage.getReceipt() + " and purpose of Travel is " + tPage.getPOTname());
 		takeScreenshot(testName);
 		receiptPage.clickStartOver();
 		wPage.verifyWelcomePage();

@@ -115,8 +115,8 @@ public class TestBase {
 		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
 	}
 
-	public void clickSubmit() {
-		driver.findElement(By.id("submit")).click();
+	public void clickSubmit() throws InterruptedException {
+		click(driver.findElement(By.id("submit")));
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 	}
 

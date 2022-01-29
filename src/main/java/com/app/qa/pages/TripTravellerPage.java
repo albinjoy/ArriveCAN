@@ -12,21 +12,19 @@ public class TripTravellerPage extends TestBase {
 	AddTravellerPage addtravel;
 
 	public void selectTraveller(String selectTraveller, String Traveller_doctype, String Traveller_docnum,
-			String Traveller_surname, String Traveller_givename, String Traveller_dob) {
+			String Traveller_surname, String Traveller_givename, String Traveller_dob) throws InterruptedException {
 		int size = driver.findElements(By.xpath(
 				"//p[text()='" + selectTraveller + "']/parent::div/parent::fieldset/div/input[@type='radio']")).size();
 		System.out.println(size);
 		if (size == 0) {
 			driver.navigate().refresh();
 			addnewTraveller(Traveller_doctype, Traveller_docnum, Traveller_surname, Traveller_givename, Traveller_dob);
-			driver.findElement(By.xpath(
-					"//p[text()='" + selectTraveller + "']/parent::div/parent::fieldset/div/input[@type='radio']"))
-					.click();
+			click(driver.findElement(By.xpath(
+					"//p[text()='" + selectTraveller + "']/parent::div/parent::fieldset/div/input[@type='radio']")));
 			clickNext();
 		} else {
-			driver.findElement(By.xpath(
-					"//p[text()='" + selectTraveller + "']/parent::div/parent::fieldset/div/input[@type='radio']"))
-					.click();
+			click(driver.findElement(By.xpath(
+					"//p[text()='" + selectTraveller + "']/parent::div/parent::fieldset/div/input[@type='radio']")));
 			clickNext();
 		}
 	}

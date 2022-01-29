@@ -15,6 +15,7 @@ public class ReceiptPage extends TestBase {
 	
 	public void exemptReceiptHead(String Content, String POTname) {
 		String receiptHdr = "Exempt ArriveCAN receipt";
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("ReceiptPage.receiptTitle.xpath"))));
 		String expectedreceiptHdr = driver.findElement(By.xpath(prop.getProperty("ReceiptPage.receiptTitle.xpath")))
 				.getText();
 		String receiptPOT = driver.findElement(By.xpath(prop.getProperty("ReceiptPage.receiptPOT.xpath"))).getText();
@@ -30,13 +31,13 @@ public class ReceiptPage extends TestBase {
 		}
 	}
 
-	public void clickStartOver() {
+	public void clickStartOver() throws InterruptedException {
 		driver.findElement(By.id(prop.getProperty("ReceiptPage.startOver.id"))).click();
 		wait.until(ExpectedConditions
 				.visibilityOf(driver.findElement(By.xpath(prop.getProperty("ReceiptPage.startOverYes.xpath")))));
 		wait.until(ExpectedConditions.elementToBeClickable(
 				driver.findElement(By.xpath(prop.getProperty("ReceiptPage.startOverYes.xpath")))));
-		driver.findElement(By.xpath(prop.getProperty("ReceiptPage.startOverYes.xpath"))).click();
+		click(driver.findElement(By.xpath(prop.getProperty("ReceiptPage.startOverYes.xpath"))));
 	}
 	
 	public String getReceipt() {
